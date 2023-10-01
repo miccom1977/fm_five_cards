@@ -15,7 +15,7 @@ class GamePolicy
      */
     public function start(): bool
     {
-        // Rozpocząć nowej gry ma każdy zalogowany użytkownik
+        // Rozpocząć nową grę może każdy zalogowany użytkownik
         return Auth::check();
     }
 
