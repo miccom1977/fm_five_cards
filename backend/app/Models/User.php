@@ -63,7 +63,7 @@ class User extends Authenticatable
 
     public function cards(): BelongsToMany
     {
-        return $this->belongsToMany(Card::class, 'user_cards', 'user_id', 'card_id')->withPivot('id');
+        return $this->belongsToMany(Card::class, 'user_cards', 'user_id', 'card_id');
     }
 
     public function rounds(): BelongsToMany

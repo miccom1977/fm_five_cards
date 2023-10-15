@@ -45,7 +45,7 @@ class DuelStatusService
         $opponentPoints = $this->calculateUserPoints($activeDuel->id, $opponentUserId);
 
         if ($activeDuel->rounds->count() > 5) {
-            $duelService->handleDuelEnd($activeDuel, $user, $opponentUserId, $yourPoints, $opponentPoints, $roundService);
+            $duelService->handleDuelEnd($user, $opponentUserId, $yourPoints, $opponentPoints);
         }
 
         return [

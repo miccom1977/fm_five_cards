@@ -30,7 +30,7 @@ class DuelService {
         ]);
     }
 
-    public function handleDuelEnd(Duel $activeDuel, User $user, $opponentUserId, $yourPoints, $opponentPoints, RoundService $roundService): void
+    public function handleDuelEnd(User $user, $opponentUserId, $yourPoints, $opponentPoints): void
     {
         $gameWinner = $this->calculateGameWinner($yourPoints, $user, $opponentPoints, $opponentUserId);
 

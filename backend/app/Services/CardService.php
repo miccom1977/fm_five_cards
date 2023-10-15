@@ -13,7 +13,7 @@ class CardService
      */
     public function getNewCard(User $user): array
     {
-        if ($user->cards->count() < 5) {
+        if ($user->cards()->count() < 5) {
             $randomCard = Card::whereNotIn('id', [1])->inRandomOrder()->first();
             $user->cards()->attach($randomCard->id, ['created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
             return ['message' => 'Wylosowano nową kartę!', 'card' => $randomCard];
